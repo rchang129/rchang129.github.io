@@ -6,6 +6,16 @@
   body {
       background-color: lightblue;
   }
+  #square {
+			margin-top: 20px;
+			margin-left: 100px;
+			height: 200px;
+			width: 200px;
+			background: orange;
+	}
+  #square:hover {
+    	cursor: pointer;
+  }
 </style>
 </head>
 
@@ -14,6 +24,24 @@
 <a name="top"></a>
 <div id="page">
 <h1>This page is for Javascript</h1>
+
+<div id="test" class="t_class"></div>
+
+<script>
+document.getElementById("test").innerHTML = "JS Sample";
+
+</script>
+	<div id="square" onclick="show_sentence()"></div>
+
+	<div>
+		<p>This is a sample message display</p>
+	</div>
+
+<script>
+function show_sentence(){
+	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+}
+</script>
 
 <button onclick="myFunction()">Go Back</button>
 
