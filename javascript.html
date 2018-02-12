@@ -6,16 +6,6 @@
   body {
       background-color: lightblue;
   }
-  #square {
-			margin-top: 20px;
-			margin-left: 100px;
-			height: 200px;
-			width: 200px;
-			background: blue;
-		}
-    #square:hover {
-  		cursor: pointer;
-  	}
 </style>
 </head>
 
@@ -24,23 +14,19 @@
 <div id="page">
 <h1>This page is for Javascript</h1>
 
-<div id="test" class="t_class"></div>
+<button onclick="myFunction()">Go Back</button>
+
+<p id="test"></p>
 
 <script>
-document.getElementById("test").innerHTML = "JS sample";
-</script>
-
-<div id="square" onclick="show_sentence()"></div>
-
-<div>
-	<p>Hello world, this is a message</p>
-</div>
-
-<script>
-function show_sentence(){
-	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+function myFunction() {
+    var str = "Free Web Building Tutorials!";
+    var result = str.link("https://www.w3schools.com");
+    document.getElementById("test").innerHTML = result;
 }
 </script>
+
+
 
 </div><!--end of page-->
 
