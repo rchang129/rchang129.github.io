@@ -23,24 +23,28 @@
 <a name="top"></a>
 <div id="page">
 <h1>This page is for Javascript</h1>
-
 <div id="test" class="t_class"></div>
 
 <script>
-document.getElementById("test").innerHTML = "JS sample";
+document.getElementById("test").innerHTML = "Hello by ID";
+// document.getElementsByTagName("div")[0].innerHTML = "Hello by Tag";
+// document.getElementsByClassName("t_class")[0].innerHTML = "Hello by Class";
 </script>
+	<div id="square" onclick="show_sentence()"></div>
 
-<div id="square" onclick="show_sentence()"></div>
+	<div>
+		<p> Hello, this is inside a PPPPP tag. </p>
+	</div>
 
-<div>
-	<p>Hello world, this is a message</p>
-</div>
+	<!-- for your exercise, comment this line out.  -->
+	<!-- <button onclick="show_sentence()">Put the Sentence</button> -->
 
 <script>
 function show_sentence(){
 	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
 }
 </script>
+
 
 </div><!--end of page-->
 
