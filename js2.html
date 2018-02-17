@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>INST377 Ryan Chang</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body {
+      background-color: lightblue;
+  }
+  #square {
+			margin-top: 20px;
+			margin-left: 100px;
+			height: 200px;
+			width: 200px;
+			background: lightgreen;
+	}
+  #square:hover {
+    	cursor: pointer;
+  }
+
+  td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {
+      background-color: #dddddd;
+  }
+
+</style>
+</head>
+
+<body>
+
+<a name="top"></a>
+<div id="page">
+<h1>Here is more JavaScript Practice</h1>
+
+<div id="test" class="t_class"></div>
+
+<script>
+document.getElementById("test").innerHTML = "JS Sample";
+
+</script>
+	<div id="square" onclick="show_sentence()"></div>
+
+	<div>
+		<p>Five Songs Currently Playing</p>
+	</div>
+
+<script>
+function show_sentence(){
+	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+}
+</script>
+
+<table>
+  <tr>
+    <th>Song</th>
+    <th>Artist</th>
+    <th>Album</th>
+  </tr>
+  <tr>
+    <td>"Breathe"</td>
+    <td>Lauv</td>
+    <td>I met you when I was 18</td>
+  </tr>
+  <tr>
+    <td>"Perfect"</td>
+    <td>Ed Sheeran</td>
+    <td>Divide</td>
+  </tr>
+  <tr>
+    <td>"FRIENDS"</td>
+    <td>Marshmello</td>
+    <td>Friends - Single</td>
+  </tr>
+  <tr>
+    <td>"Faded"</td>
+    <td>Alan Walker</td>
+    <td>Faded EP</td>
+  </tr>
+  <tr>
+    <td>"Please Don't Lie"</td>
+    <td>Hugo Helmig</td>
+    <td>Please Don't Lie - Single</td>
+  </tr>
+</table>
+
+
+<button onclick="myFunction()">Go Back</button>
+
+<script>
+function myFunction() {
+window.location.href = "https://rchang129.github.io./";
+}
+</script>
+
+</div><!--end of page-->
+
+</body>
+</html>
