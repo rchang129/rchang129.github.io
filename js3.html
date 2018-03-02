@@ -7,6 +7,34 @@
       background-color: lightblue;
   }
 </style>
+<script>
+			var users = [
+				{
+					"Song": "Breathe",
+					"Artist": "Lauv",
+					"Album": "I met you when I was 18",
+				},
+				{
+					"Song": "Perfect",
+					"Artist": "Ed Sheeran",
+					"Album": "Divide",
+				},
+				{
+          "Song": "FRIENDS",
+					"Artist": "Marshmello",
+					"Album": "Friends - Single",
+				},
+        {
+          "Song": "Faded",
+          "Artist": "Alan Walker",
+          "Album": "Faded EP",
+        },
+        "Song": "Please Don't Lie",
+        "Artist": "Hugo Helmig",
+        "Album": "Please Don't Lie - Single",
+			];
+		</script>
+
 </head>
 
 <body>
@@ -14,8 +42,65 @@
 <a name="top"></a>
 <div id="page">
 <h2>Here is more JavaScript Practice (part 3)</h2>
+<script>
+document.getElementById("test").innerHTML = "JS Practice -- Objects and Functions";
+</script>
 
-<div id="test" class="t_class"></div>
+<table>
+			<thead>
+				<tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Duration Data</th>
+        </tr>
+			</thead>
+
+      <tbody id="songList">
+      </tbody>
+  </table>
+
+		<script>
+			function hideRow(obj) {
+				var a = obj.getElementsByClassName('num');
+				var b = document.getElementsByClassName('totnum')[0].innerText;
+				document.getElementsByClassName('totnum')[0].innerText = b - a[0].innerText;
+				obj.style.display = 'none';
+			}
+
+			function dateCalc(d) {
+				var oneDay = 1000 * 60 * 60 * 24;
+				var month = d.split("/")[0] - 1,
+					day = d.split("/")[1],
+					year = d.split("/")[2]
+				if (year.length == 2) {year = '20' + year;}
+				date1 = new Date(year, month, day);
+				var date1_ms = date1.getTime();
+				var date2 = new Date();
+				var date2_ms = date2.getTime();
+				var diff_ms = date2_ms - date1_ms;
+				return Math.round(diff_ms/oneDay);
+			}
+
+			var newtext = "";
+			var totdays = 0;
+			for (var x in users) {
+				if (users.hasOwnProperty(x)) {
+					var obj = users[x];
+					newtext += "<tr onclick='hideRow(this)'><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" +
+						obj['User ID'] + "</td><td>" +
+						obj['Date of Login'] + "</td><td>" +
+						obj['City'] + "</td><td align='center' class='num'>" +
+						dateCalc(obj['Date of Login']) + "</td></tr>";
+					totdays += dateCalc(obj['Date of Login']);
+				}
+			}
+			newtext += "<tr> <td colspan='4'>Total Days</td> <td align='center' class='totnum'>" + totdays + "</td></tr>";
+			document.getElementById("newpeople").innerHTML = newtext;
+		</script>
+</div>
+
+
 
 
 
