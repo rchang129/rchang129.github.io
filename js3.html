@@ -60,11 +60,12 @@ document.getElementById("test").innerHTML = "JS Practice -- Objects and Function
       </tbody>
   </table>
 
-		<script>
+  <script>
+
 			function hideRow(obj) {
-				var a = obj.getElementsByClassName('num');
-				var b = document.getElementsByClassName('totnum')[0].innerText;
-				document.getElementsByClassName('totnum')[0].innerText = b - a[0].innerText;
+				var y = obj.getElementsByClassName('num');
+				var tn = document.getElementsByClassName('totnum')[0].innerText;
+				document.getElementsByClassName('totnum')[0].innerText = tn - y[0].innerText;
 				obj.style.display = 'none';
 			}
 
@@ -95,29 +96,10 @@ document.getElementById("test").innerHTML = "JS Practice -- Objects and Function
 					totdays += dateCalc(obj['Date of Login']);
 				}
 			}
-			newtext += "<tr> <td colspan='4'>Total Days</td> <td align='center' class='totnum'>" + totdays + "</td></tr>";
+			newtext += "<tr><td colspan='4'>Total Days</td><td align='center' class='totnum'>" + totdays + "</td></tr>";
 			document.getElementById("newpeople").innerHTML = newtext;
 		</script>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 </div><!--end of page-->
 
 </body>
